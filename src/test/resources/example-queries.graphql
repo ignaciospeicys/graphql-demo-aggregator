@@ -1,0 +1,31 @@
+#this file contains several example queries utilized to test the API
+#these can be used in several different ways:
+#   1)via GraphiQL (graphical interface exposed at /graphiql).
+#   2)via HTTP using clients such as POSTMAN. If in doubt, read "serving over http" on GraphQL's official documentation.
+
+#queries for a client of id: 1, and requests the following fields: id, name
+query {
+    clientById(id: 1) {
+        id
+        name
+        documentNumber
+    }
+}
+#queries for a client of id: 1, and requests the following fields
+query {
+    clientById(id: 1) {
+        id
+        name
+        savingsAccount {
+            id
+            CurrencyISO
+            amount
+        }
+        creditCards {
+            provider
+            CurrencyISO
+            cardNumber
+            limit
+        }
+    }
+}

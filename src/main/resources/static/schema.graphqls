@@ -1,0 +1,24 @@
+type Client {
+    id: Int
+    name: String
+    documentNumber: Int
+    savingsAccount: SavingsAccount
+    creditCards: [CreditCard]
+}
+
+type SavingsAccount {
+    id: Int!
+    CurrencyISO: String!
+    amount: Float!
+}
+
+type CreditCard {
+    cardNumber: Int!
+    CurrencyISO: String!
+    provider: String!
+    limit: Float
+}
+
+type Query {
+    clientById(id: Int) : Client
+}

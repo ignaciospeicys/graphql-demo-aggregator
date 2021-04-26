@@ -1,0 +1,20 @@
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+
+#endpoint configuration for the graphical interface
+graphiql:
+  mapping: /graphiql
+  endpoint: /graphql
+  enabled: true
+  pageTitle: GraphiQL
+  cdn:
+    enabled: false
+    version: 0.11.11
+
+host:
+  client-information: ${CLIENT_INFO_HOST_URL}
+  credit-cards: ${CREDIT_CARD_HOST_URL}
+  savings-service: ${SAVINGS_SERVICE_HOST_URL}
